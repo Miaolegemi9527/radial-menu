@@ -1,0 +1,58 @@
+/* components/radial-menu/index.wxss */
+
+.radial-menu-plus-style {
+  z-index: 9527;
+  position: absolute;
+}
+ 
+.radial-menu-view {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radial-menu-item-view {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* hover-class 点击 透明度变化、缩放*/
+.radial-menu-item-hover{
+   opacity: 0.9;
+   transform: scale(1.1,1.1);
+ }
+ 
+.radial-menu-icon {
+  width: 61.8%;
+  height: 61.8%;
+}
+
+.rotate-view {
+  animation-name: rotateAnimation; /*动画的名称 */
+  animation-timing-function: linear; /*动画执行快慢的参数*/
+  animation-iteration-count: infinite; /*动画执行多少次的参数*//*以下是兼容ios所需，参数意义与上相同*/
+  -webkit-animation-name: rotateAnimation;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes rotateAnimation {
+  /*开始转的角度*/
+  from {
+    transform: rotate(0deg);
+  }/*结束的角度*/
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*兼容ios*/
+@-webkit-keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

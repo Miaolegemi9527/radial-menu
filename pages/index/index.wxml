@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<radial-menu 
+  run="{{ true }}" 
+  speed="{{ 10000 }}"
+  items="{{ items }}" 
+  midIcon="/images/chun.png" 
+  bindclick="click"
+/>

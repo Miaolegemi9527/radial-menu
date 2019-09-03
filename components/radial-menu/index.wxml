@@ -1,0 +1,28 @@
+<!--components/radial-menu/index.wxml-->
+<view class="">
+  <image 
+    src="{{ midIcon }}" 
+    class="radial-menu-plus-style" 
+    style="width:{{ iconWidth }}px;height:{{ iconWidth }}px;margin-top: {{ originY }}px;margin-left: {{ originX }}px" 
+    animation="{{ midBtnAnimation }}" 
+    bindtap="showTap">
+  </image>
+  <view 
+    class="radial-menu-view {{ (isPush && run) ? 'rotate-view' : '' }} " 
+    style="width:{{ pushWidth }}px;height:{{ pushWidth }}px;margin-top: {{ originY2 }}px;margin-left: {{ originX2 }}px;animation-duration: {{ (isPush && run) ? speed + 'ms' : '0ms' }};-webkit-animation-duration: {{ (isPush && run) ?  speed + 'ms' : '0ms' }};animation-play-state:{{ (isPush && run) ? 'running' : 'paused' }};-webkit-animation-play-state:{{ (isPush && run) == true ? 'running' : 'paused' }};">
+    <block wx:for="{{ items }}" wx:key="{{ index }}">
+      <view 
+        class="radial-menu-item-view" 
+        style="width:{{ iconWidth }}px;height:{{ iconWidth }}px;" 
+        bindtap="clickItem" 
+        data-index="{{ index }}" 
+        animation="{{ animations[index] }}">
+        <image 
+          class="radial-menu-icon" 
+          src="{{ item.icon }}" >
+        </image>
+        <text>{{ item.name }}</text>
+      </view>
+    </block>
+  </view>
+</view>
